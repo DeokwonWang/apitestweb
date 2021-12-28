@@ -11,7 +11,7 @@
   <script>
 
   function requestPhoneCode() {
-    window.flutter_inappwebview.callHandler('requestPhoneCode', 16505551212);
+    window.flutter_inappwebview.callHandler('requestPhoneCode', +16505551212);
   }
   function receivedPhoneCode(phoneCode) {
     var phonecode = phoneCode.message["code"];
