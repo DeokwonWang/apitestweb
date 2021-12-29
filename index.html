@@ -33,14 +33,18 @@
   function requestShare() {
      window.flutter_inappwebview.callHandler("requestShare");
   }
-  function requestShare2() {
-     window.flutter_inappwebview.callHandler("requestShare2");
-  }
-    
   function receivedShare(share) {
     var shareMsg = share.message;
     document.getElementById("share").innerHTML=shareMsg;
   }
+    
+  function requestShare2() {
+     window.flutter_inappwebview.callHandler("requestShare2");
+  }
+  function receivedShare2(share2) {
+    var shareMsg2 = share2.message;
+    document.getElementById("share2").innerHTML=shareMsg2;
+  }  
 
 
   function error(error){
@@ -58,7 +62,7 @@
     <button type="button" onclick="requestLocation()">receive location</button>
     <h1 id="share">This is share api</h1>
     <button type="button" onclick="requestShare()">use Share</button>
-    <h1 id="share">This is share2 api</h1>
+    <h1 id="share2">This is share2 api</h1>
     <button type="button" onclick="requestShare2()">use Share2</button>
     <form>
       <input type="file" accept="image/*" 
