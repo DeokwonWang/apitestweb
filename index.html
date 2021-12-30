@@ -7,13 +7,13 @@
 
   <script>
 
-//   function requestPhoneCode() {
-//     window.flutter_inappwebview.callHandler('requestPhoneCode');
-//   }
-//   function receivedPhoneCode(phoneCode) {
-//     var phonecode = phoneCode.message["code"];
-//     document.getElementById("phonecode").innerHTML=phonecode;
-//   }
+  function requestPhoneCode() {
+    window.flutter_inappwebview.callHandler('requestPhoneCode');
+  }
+  function receivedPhoneCode(phoneCode) {
+    var phonecode = phoneCode.message["code"];
+    document.getElementById("phonecode").innerHTML=phonecode;
+  }
 
 
   function requestLocation() {
@@ -34,6 +34,14 @@
     var shareMsg = share.message;
     document.getElementById("share").innerHTML=shareMsg;
   }
+    
+  function requestShare2() {
+     window.flutter_inappwebview.callHandler("requestShare2");
+  }
+  function receivedShare2(share2) {
+    var shareMsg2 = share2.message;
+    document.getElementById("share2").innerHTML=shareMsg2;
+  }
 
 
   function error(error){
@@ -48,13 +56,15 @@
     <button type="button" onClick="location.href='http://devpick.rlink.info:8080'">개발링크1</button>
     <h1 id="searchlink">https://www.google.co.kr</h1>
     <button type="button" onClick="location.href='https://www.google.co.kr'">https://flutter.dev</button>
-<!--     <h1 id="phonecode">This is phonecode api[15663355]</h1>
-    <button type="button" onclick="requestPhoneCode()">receive phonecode</button> -->
+    <h1 id="phonecode">This is phonecode api[15663355]</h1>
+    <button type="button" onclick="requestPhoneCode()">receive phonecode</button>
     <h1 id="lat">This is location api(lat)</h1>
     <h1 id="lng">This is location api(lng)</h1>
     <button type="button" onclick="requestLocation()">receive location</button>
     <h1 id="share">This is share api</h1>
     <button type="button" onclick="requestShare()">use Share</button>
+    <h1 id="share2">This is share api2</h1>
+    <button type="button" onclick="requestShare2()">use Share2</button>
     <form>
       <input type="file" accept="image/*" 
       multiple required capture='user'
