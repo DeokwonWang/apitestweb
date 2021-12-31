@@ -42,7 +42,11 @@
     var shareMsg2 = share2.message;
     document.getElementById("share2").innerHTML=shareMsg2;
   }
-
+    
+  function receivedFCMappToken(token){
+    var appToken = token.message["AppToken"];
+    document.getElementById("AppToken").innerHTML=appToken;
+  }
 
   function error(error){
     var errorLog = error.message;
@@ -71,6 +75,8 @@
       onchange="aaa"/>
         <input type="submit">
     </form>
+    <h1 id="AppTokenEx">This is FCM AppToken</h1>
+    <h1 id="AppToken">hi AppToken</h1>
     <h1 id = "error">hi error</h1>
     
   <script src="index.js"></script>
