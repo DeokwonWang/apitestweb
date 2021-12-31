@@ -47,8 +47,8 @@
     window.flutter_inappwebview.callHandler("requestFCMappToken");
   }
   function receivedFCMappToken(token){
-    var appToken = token.message["AppToken"];
-    document.getElementById("AppToken").innerHTML=appToken;
+    var appToken = token.message["appToken"];
+    document.getElementById("apptoken").innerHTML=appToken;
   }
 
   function error(error){
@@ -78,7 +78,7 @@
       onchange="aaa"/>
         <input type="submit">
     </form>
-    <h1 id="AppToken">This is FCM AppToken</h1>
+    <h1 id="apptoken">This is FCM AppToken</h1>
     <button type="button" onclick="requestFCMappToken()">receive token</button>
     <h1 id = "error">hi error</h1>
     
