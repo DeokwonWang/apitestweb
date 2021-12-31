@@ -49,10 +49,10 @@
   function receivedFCMappToken(sendToken) {
     var tokensuccess = sendToken;
 //     var apptoken = sendToken.status;
-//     var apptoken1 = sendToken.message["token"];
+    var apptoken1 = sendToken.message["token"];
     
     document.getElementById("tokensuccess").innerHTML=tokensuccess;
-//     document.getElementById("apptoken").innerHTML=apptoken1;
+    document.getElementById("apptoken").innerHTML=apptoken1;
   }
 
   function error(error){
