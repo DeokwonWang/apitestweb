@@ -46,11 +46,11 @@
   function requestFCMappToken() {
     window.flutter_inappwebview.callHandler("requestFCMappToken");
   }
-  function receivedFCMappToken(token) {
-    var apptoken = token;
-    var apptoken1 = token.message["token"];
+  function receivedFCMappToken(sendToken) {
+//     var apptoken = token;
+    var apptoken1 = sendToken.message["token"];
     
-    document.getElementById("tokensuccess").innerHTML=apptoken;
+//     document.getElementById("tokensuccess").innerHTML=apptoken;
     document.getElementById("apptoken").innerHTML=apptoken1;
   }
 
