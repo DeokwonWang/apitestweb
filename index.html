@@ -43,12 +43,12 @@
     document.getElementById("share2").innerHTML=shareMsg2;
   }
     
-  function requestFCMappToken(){
+  function requestFCMappToken() {
     window.flutter_inappwebview.callHandler("requestFCMappToken");
   }
-  function receivedFCMappToken(token){
-    var appToken = token.message["appToken"];
-    document.getElementById("token").innerHTML=appToken;
+  function receivedFCMappToken(token) {
+    var apptoken = token.message["token"];
+    document.getElementById("apptoken").innerHTML=apptoken;
   }
 
   function error(error){
@@ -61,25 +61,33 @@
   <body>
     <h1 id="devpick">http://devpick.rlink.info:8080</h1>
     <button type="button" onClick="location.href='http://devpick.rlink.info:8080'">개발링크1</button>
+    
     <h1 id="searchlink">https://www.google.co.kr</h1>
     <button type="button" onClick="location.href='https://www.google.co.kr'">https://flutter.dev</button>
+    
     <h1 id="phonecode">This is phonecode api[15663355]</h1>
     <button type="button" onclick="requestPhoneCode()">receive phonecode</button>
+    
     <h1 id="lat">This is location api(lat)</h1>
     <h1 id="lng">This is location api(lng)</h1>
-    <button type="button" onclick="requestLocation()">receive location</button>
+    <button type="button" onclick="requestLocation()">receive location</button>    
+    
+    <h1 id="apptoken">This is FCM AppToken</h1>
+    <button type="button" onclick="requestFCMappToken()">receive token</button>
+    
     <h1 id="share">This is share api</h1>
     <button type="button" onclick="requestShare()">use Share</button>
+    
     <h1 id="share2">This is share api2</h1>
     <button type="button" onclick="requestShare2()">use Share2</button>
+        
     <form>
       <input type="file" accept="image/*" 
       multiple required capture='user'
       onchange="aaa"/>
         <input type="submit">
     </form>
-    <h1 id="token">This is FCM AppToken</h1>
-    <button type="button" onclick="requestFCMappToken()">receive token</button>
+        
     <h1 id = "error">hi error</h1>
     
   <script src="index.js"></script>
