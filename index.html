@@ -43,6 +43,9 @@
     document.getElementById("share2").innerHTML=shareMsg2;
   }
     
+  function requestFCMappToken(){
+    window.flutter_inappwebview.callHandler("requestFCMappToken");
+  }
   function receivedFCMappToken(token){
     var appToken = token.message["AppToken"];
     document.getElementById("AppToken").innerHTML=appToken;
@@ -75,8 +78,8 @@
       onchange="aaa"/>
         <input type="submit">
     </form>
-    <h1 id="AppTokenEx">This is FCM AppToken</h1>
-    <h1 id="AppToken">hi AppToken</h1>
+    <h1 id="AppToken">This is FCM AppToken</h1>
+    <button type="button" onclick="requestFCMappToken()">receive token</button>
     <h1 id = "error">hi error</h1>
     
   <script src="index.js"></script>
