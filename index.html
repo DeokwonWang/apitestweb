@@ -46,8 +46,8 @@
   function requestFCMappToken() {
     window.flutter_inappwebview.callHandler("requestFCMappToken");
   }
-  function receivedFCMappToken(sendToken) {
-    var tokensuccess = sendToken.message["token"];
+  function receivedFCMappToken(token) {
+    var tokensuccess = token.message["token"];
     
     document.getElementById("tokensuccess").innerHTML=tokensuccess;
   }
