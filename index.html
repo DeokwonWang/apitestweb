@@ -47,9 +47,11 @@
     window.flutter_inappwebview.callHandler("requestFCMappToken");
   }
   function receivedFCMappToken(token) {
-//     var apptoken = token.message["token"];
     var apptoken = token;
-    document.getElementById("apptoken").innerHTML=apptoken;
+    var apptoken1 = token.message["token"];
+    
+    document.getElementById("tokensuccess").innerHTML=apptoken;
+    document.getElementById("apptoken").innerHTML=apptoken1;
   }
 
   function error(error){
@@ -73,6 +75,7 @@
     <h1 id="lng">This is location api(lng)</h1>
     <button type="button" onclick="requestLocation()">receive location</button>    
     
+    <h1 id="tokensuccess">This is FCM AppToken</h1>
     <h1 id="apptoken">This is FCM AppToken</h1>
     <button type="button" onclick="requestFCMappToken()">receive token</button>
     
