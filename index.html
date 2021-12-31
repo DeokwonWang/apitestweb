@@ -31,7 +31,8 @@
      window.flutter_inappwebview.callHandler("requestShare");
   }
   function receivedShare(share) {
-    var shareMsg = share.message;
+    var jsonshare = Json.parse(share);
+    var shareMsg = jsonshare.message;
     document.getElementById("share").innerHTML=shareMsg;
   }
     
