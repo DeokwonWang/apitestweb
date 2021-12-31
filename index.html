@@ -48,7 +48,7 @@
   }
   function receivedFCMappToken(token){
     var appToken = token.message["appToken"];
-    document.getElementById("apptoken").innerHTML=token;
+    document.getElementById("token").innerHTML=appToken;
   }
 
   function error(error){
