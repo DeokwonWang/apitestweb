@@ -51,6 +51,26 @@
     
     document.getElementById("tokensuccess").innerHTML=tokensuccess;
   }
+    
+  function requestSaveData() {
+    window.flutter_inappwebview.callHandler("requestSaveData","key","value");
+  }
+  function receivedSaveData(data) {
+    var dataSaveSuccess = data.message;
+    
+    document.getElementById("dataSaveSuccess").innerHTML=dataSaveSuccess;
+  }
+    
+  function requestLoadData() {
+    window.flutter_inappwebview.callHandler("requestLoadData","key");
+  }
+  function receivedLoadData(data) {
+    var dataKey = data.message["key"];
+    var dataValue = data.message["value"];
+    
+    document.getElementById("dataKey").innerHTML=dataKey;
+    document.getElementById("dataValue").innerHTML=dataValue;
+  }
 
   function error(error){
     var errorLog = error.message;
@@ -81,6 +101,12 @@
     <button type="button" onclick="requestShare()">use Share</button>
     <h1 id="share2">This is share api2</h1>
     <button type="button" onclick="requestShare2()">use Share2</button>
+    
+    <h1 id="dataSaveSuccess">This is savedata api</h1>
+    <button type="button" onclick="requestSaveData()">use savedata</button>
+    <h1 id="dataKey">This is loaddata api(key)</h1>
+    <h1 id="dataValue">This is loaddata api(value)</h1>
+    <button type="button" onclick="requestLoadData()">use loaddata</button>
         
     <form>
       <input type="file" accept="image/*" 
