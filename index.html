@@ -71,6 +71,15 @@
     document.getElementById("dataKey").innerHTML=dataKey;
     document.getElementById("dataValue").innerHTML=dataValue;
   }
+    
+  function openAppSettings() {
+    window.flutter_inappwebview.callHandler("openAppSettings");
+  }
+  function receivedopenAppSettings(settings) {
+    var goSettingSuccess = settings.message;
+    
+    document.getElementById("goSettingSuccess").innerHTML=goSettingSuccess;
+  }
 
   function error(error){
     var errorLog = error.message;
@@ -116,6 +125,9 @@
     <h1 id="dataKey">This is loaddata api(key)</h1>
     <h1 id="dataValue">This is loaddata api(value)</h1>
     <button type="button" onclick="requestLoadData()">use loaddata</button>
+    
+    <h1 id="goSettingSuccess">This is openAppSettings api</h1>
+    <button type="button" onclick="openAppSettings()">openAppSettings()</button>
         
     <form>
       <input type="file" accept="image/*" 
