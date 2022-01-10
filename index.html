@@ -72,13 +72,22 @@
     document.getElementById("dataValue").innerHTML=dataValue;
   }
     
-  function openAppSettings() {
-    window.flutter_inappwebview.callHandler("openAppSettings");
+  function requestOpenAppSettings() {
+    window.flutter_inappwebview.callHandler("requestOpenAppSettings");
   }
-  function receivedopenAppSettings(settings) {
+  function receivedOpenAppSettings(settings) {
     var goSettingSuccess = settings.message;
     
     document.getElementById("goSettingSuccess").innerHTML=goSettingSuccess;
+  }
+  
+  function requestPushOnOff() {
+    window.flutter_inappwebview.callHandler("requestPushOnOff");
+  }
+  function receivedPushOnOff(push) {
+    var pushonoff = push.message;
+    
+    document.getElementById("pushonoff").innerHTML=pushonoff;
   }
 
   function error(error){
@@ -128,6 +137,9 @@
     
     <h1 id="goSettingSuccess">This is openAppSettings api</h1>
     <button type="button" onclick="openAppSettings()">openAppSettings()</button>
+    
+    <h1 id="pushonoff">This is PushOnOff api</h1>
+    <button type="button" onclick="requestPushOnOff()">PushOnOff</button>
         
     <form>
       <input type="file" accept="image/*" 
