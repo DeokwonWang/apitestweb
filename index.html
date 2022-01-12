@@ -84,6 +84,10 @@
   function requestPushOnOff() {
     window.flutter_inappwebview.callHandler("requestPushOnOff");
   }
+  function requestOpenNotificationSettings() {
+    window.flutter_inappwebview.callHandler("requestOpenNotificationSettings");
+  }
+    
   function receivedPushOnOff(push) {
     var pushonoff = push.message;
     
@@ -140,6 +144,7 @@
     
     <h1 id="pushonoff">This is PushOnOff api</h1>
     <button type="button" onclick="requestPushOnOff()">PushOnOff</button>
+    <button type="button" onclick="requestOpenNotificationSettings()">OpenNotificationSettings</button>
         
     <form>
       <input type="file" accept="image/*" 
