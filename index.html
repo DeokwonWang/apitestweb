@@ -102,6 +102,10 @@
     
     document.getElementById("pushonoff").innerHTML=pushonoff;
   }
+    
+  function receivedChangePath(path) {
+    var path = path.message;
+  }
 
   function error(error){
     var errorLog = error.message;
@@ -156,7 +160,7 @@
     <button type="button" onclick="requestPushOff()">pushOff</button>
 <!--     <button type="button" onclick="requestPushOnOff()">PushOnOff</button> -->
 <!--     <button type="button" onclick="requestOpenNotificationSettings()">OpenNotificationSettings</button> -->
-    <button type="button" onClick="location.href='https://duckwon.netlify.app/share'">go share page</button>
+    <button type="button" onClick=path>go share page</button>
     
     <form>
       <input type="file" accept="image/*" 
