@@ -107,10 +107,12 @@
     window.flutter_inappwebview.callHandler("requestChangePath");
   }
   
-  var changePath = '';
+//   var changePath = '';
   
   function receivedChangePath(path) {
-    changePath = path.message;
+//     changePath = path.message;
+    var changePath = path.message;
+    location.href = changePath;
   }
 
   function error(error){
@@ -118,14 +120,14 @@
     document.getElementById("error").innerHTML=errorLog;
   }
     
-  window.onload = function () {
-    requestChangePath();
-    if(changePath != ''){
-      location.href = changePath;
-      console.log('done');
-    }
-    print('hi onload');
-  }
+//   window.onload = function () {
+//     requestChangePath();
+//     if(changePath != ''){
+//       location.href = changePath;
+//       console.log('done');
+//     }
+//     print('hi onload');
+//   }
     
   </script>
   </head>
