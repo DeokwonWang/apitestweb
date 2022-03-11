@@ -8,7 +8,7 @@
   <script>
 
   function requestShare() {
-     window.flutter_inappwebview.callHandler("requestShare");
+     window.flutter_inappwebview.callHandler("requestShare","test제목","https://www.ui4u.go.kr/depart/img/content/sub03/img_con03030100_01.jpg");
   }
   function receivedShare(share) {
     var shareMsg = share.message;
